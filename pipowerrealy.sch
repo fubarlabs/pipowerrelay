@@ -1247,6 +1247,10 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1256,18 +1260,22 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="K1" gate="1" x="7.62" y="58.42"/>
 <instance part="K1" gate="2" x="20.32" y="58.42"/>
 <instance part="P1" gate="G$1" x="-20.32" y="60.96" rot="R180"/>
-<instance part="P2" gate="G$1" x="53.34" y="55.88"/>
+<instance part="P2" gate="G$1" x="73.66" y="60.96"/>
 <instance part="D1" gate="1" x="17.78" y="71.12"/>
 <instance part="D2" gate="G$1" x="25.4" y="38.1"/>
 <instance part="JP1" gate="A" x="30.48" y="81.28" rot="MR270"/>
 <instance part="R3" gate="G$1" x="10.16" y="38.1"/>
 <instance part="R4" gate="G$1" x="17.78" y="76.2"/>
 <instance part="SUPPLY1" gate="GND" x="30.48" y="73.66"/>
-<instance part="SUPPLY2" gate="GND" x="40.64" y="43.18"/>
+<instance part="SUPPLY2" gate="GND" x="60.452" y="57.15" rot="R270"/>
 <instance part="P+1" gate="VCC" x="35.56" y="71.12" rot="R180"/>
 <instance part="P+2" gate="VCC" x="17.78" y="43.18" rot="R180"/>
 <instance part="P+3" gate="VCC" x="-12.7" y="43.18" rot="R180"/>
 <instance part="SUPPLY3" gate="GND" x="2.54" y="30.48"/>
+<instance part="SUPPLY4" gate="GND" x="-5.08" y="63.5"/>
+<instance part="SUPPLY5" gate="GND" x="27.94" y="63.5"/>
+<instance part="P+4" gate="VCC" x="58.928" y="64.77" rot="R90"/>
+<instance part="P+5" gate="VCC" x="45.72" y="38.1" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -1278,15 +1286,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="JP1" gate="A" pin="2"/>
 <wire x1="20.32" y1="71.12" x2="27.94" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="71.12" x2="27.94" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="P1" gate="G$1" pin="GND"/>
-<wire x1="-15.24" y1="66.04" x2="-5.08" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="K1" gate="1" pin="2"/>
-<wire x1="-5.08" y1="66.04" x2="-5.08" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="53.34" x2="7.62" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -1304,21 +1303,6 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="13.97" y1="38.1" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
-<segment>
-<pinref part="P2" gate="G$1" pin="VCC"/>
-<pinref part="D2" gate="G$1" pin="A"/>
-<wire x1="45.72" y1="59.69" x2="35.56" y2="59.69" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="59.69" x2="35.56" y2="55.88" width="0.1524" layer="91"/>
-<junction x="35.56" y="55.88"/>
-<wire x1="35.56" y1="55.88" x2="35.56" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="K1" gate="2" pin="S@1"/>
-<wire x1="17.78" y1="63.5" x2="17.78" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="66.04" x2="33.02" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="66.04" x2="33.02" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="55.88" x2="35.56" y2="55.88" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GND" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="3"/>
@@ -1326,16 +1310,26 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="30.48" y1="83.82" x2="30.48" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P2" gate="G$1" pin="GND"/>
-<pinref part="SUPPLY2" gate="GND" pin="GND"/>
-<wire x1="45.72" y1="52.07" x2="40.64" y2="52.07" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="52.07" x2="40.64" y2="45.72" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="R3" gate="G$1" pin="1"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
 <wire x1="6.35" y1="38.1" x2="2.54" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="38.1" x2="2.54" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="17.78" y1="66.04" x2="27.94" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="K1" gate="2" pin="S@1"/>
+<wire x1="17.78" y1="63.5" x2="17.78" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="SUPPLY5" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="P1" gate="G$1" pin="GND"/>
+<wire x1="-15.24" y1="66.04" x2="-5.08" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="SUPPLY4" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="SUPPLY2" gate="GND" pin="GND"/>
+<pinref part="P2" gate="G$1" pin="GND"/>
+<wire x1="62.992" y1="57.15" x2="66.04" y2="57.15" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -1356,6 +1350,16 @@ In this library the device names are the same as the pin names of the symbols, t
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 <wire x1="-15.24" y1="55.88" x2="-12.7" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="55.88" x2="-12.7" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="D2" gate="G$1" pin="A"/>
+<pinref part="P+5" gate="VCC" pin="VCC"/>
+<wire x1="35.56" y1="38.1" x2="43.18" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+4" gate="VCC" pin="VCC"/>
+<pinref part="P2" gate="G$1" pin="VCC"/>
+<wire x1="61.468" y1="64.77" x2="66.04" y2="64.77" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
